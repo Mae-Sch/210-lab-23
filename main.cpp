@@ -20,6 +20,22 @@ void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
 int main_menu();
 
+int select_goat(list<Goat> trip) {
+    int count = 1;
+    int selection;
+    for (Goat goat : trip) {
+        cout << "[" << count << "] " << goat.get_name() << "(" << goat.get_age()
+        << ", " << goat.get_color() << ")\n";
+    }
+    cout << "which goat would you like? ";
+    cin >> selection;
+    return selection;
+}
+
+void delete_goat(list<Goat> &trip) {
+
+}
+
 int main_menu() {
     cout << MENU;
     cin >> input;
