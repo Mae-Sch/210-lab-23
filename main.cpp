@@ -17,12 +17,15 @@ int main_menu();
 int select_goat(list<Goat> trip) {
     int count = 1;
     int selection;
+    cout << endl << endl;
+    cout << "*** Current Goats ***\n";
     for (Goat goat : trip) {
         cout << "[" << count << "] " << goat.get_name() << "(" << goat.get_age()
         << ", " << goat.get_color() << ")\n";
         count ++;
     }
-    cout << "which goat would you like? ";
+    cout << endl;
+    cout << "enter the index of the goat you would like to modify -> ";
     cin >> selection;
     return selection;
 }
@@ -37,11 +40,14 @@ void add_goat(list<Goat> &trip, string names[], string colors[]) {
 
 void display_trip(list<Goat> trip) {
     int count = 1;
-        for (Goat goat : trip) {
-            cout << "[" << count << "] " << goat.get_name() << "(" << goat.get_age()
-            << ", " << goat.get_color() << ")\n";
-            ++count;
-        }
+    cout << endl;
+    cout << "*** Current Goats ***\n";
+    for (Goat goat : trip) {
+        cout << "[" << count << "] " << goat.get_name() << "(" << goat.get_age()
+        << ", " << goat.get_color() << ")\n";
+        ++count;
+    }
+    cout << endl;
 }
 
 void delete_goat(list<Goat> &trip) {
@@ -84,9 +90,11 @@ int main() {
         switch(input) {
             case 1:
                 add_goat(Goats, names, colors);
+                display_trip(Goats);
                 break;
             case 2:
                 delete_goat(Goats);
+                display_trip(Goats);
                 break;
             case 3:
                 display_trip(Goats);
