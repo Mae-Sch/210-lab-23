@@ -6,13 +6,7 @@
 using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25, MAX_AGE = 20;
-const string MENU =
-"*** GOAT MANAGER 3001 ***\n
-[1] Add a goat\n
-[2] Delete a goat\n
-[3] List goats\n
-[4] Quit\n
-Choice --> ";
+const string MENU = "*** GOAT MANAGER 3001 ***\n[1] Add a goat\n[2] Delete a goat\n[3] List goats\n[4] Quit\nChoice --> ";
 
 int select_goat(list<Goat> trip);
 void delete_goat(list<Goat> &trip);
@@ -32,11 +26,26 @@ int select_goat(list<Goat> trip) {
     return selection;
 }
 
-void delete_goat(list<Goat> &trip) {
+void add_goat(list<Goat> &trip, string [], string []) {
+    return;
+}
 
+void display_trip(list<Goat> trip) {
+    return;
+}
+
+void delete_goat(list<Goat> &trip) {
+    int goatIndex = select_goat(trip);
+
+    // we use interators to find the goat to delete
+    list<Goat>::iterator it = trip.begin();
+    
+    advance(it, goatIndex);
+    trip.erase(it); // erases list element at the user selected location
 }
 
 int main_menu() {
+    int input;
     cout << MENU;
     cin >> input;
     return input;
