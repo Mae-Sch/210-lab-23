@@ -20,18 +20,28 @@ int select_goat(list<Goat> trip) {
     for (Goat goat : trip) {
         cout << "[" << count << "] " << goat.get_name() << "(" << goat.get_age()
         << ", " << goat.get_color() << ")\n";
+        count ++;
     }
     cout << "which goat would you like? ";
     cin >> selection;
     return selection;
 }
 
-void add_goat(list<Goat> &trip, string [], string []) {
-    return;
+void add_goat(list<Goat> &trip, string names[], string colors[]) {
+    string name = names[rand() % (SZ_NAMES + 1)];
+    string color = colors[rand() % (SZ_COLORS + 1)];
+    int age = rand() % (MAX_AGE + 1);
+    Goat newGoat(name, age, color);
+    trip.push_back(newGoat);
 }
 
 void display_trip(list<Goat> trip) {
-    return;
+    int count = 1;
+        for (Goat goat : trip) {
+            cout << "[" << count << "] " << goat.get_name() << "(" << goat.get_age()
+            << ", " << goat.get_color() << ")\n";
+            ++count;
+        }
 }
 
 void delete_goat(list<Goat> &trip) {
